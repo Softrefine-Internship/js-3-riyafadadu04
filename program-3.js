@@ -22,5 +22,34 @@
 //     'mentor.JavaScript': 'GFG'
 // }
 
+function flattenObject(obj) {
+    const result = {};
+    function recurse(obj, objKey) {
+      for (const key in obj) {
+        const newobjKey = objKey ? `${objKey}.${key}` : key; 
+        if (typeof obj[key] === "object") {
+          recurse(obj[key], newobjKey);
+        } else {
+          result[newobjKey] = obj[key];
+        }
+      }
+    }
+    recurse(obj, "");
+    return result;
+  }
+
+  const inputObject = {
+    Company: "GeeksforGeeks",
+    Address: "Noida",
+    contact: -999999908,
+    mentor: {
+      HTML: "GFG",
+      CSS: "GFG",
+      JavaScript: "GFG",
+    },
+  };
+
+  console.log(flattenObject(inputObject));
+
 
 
