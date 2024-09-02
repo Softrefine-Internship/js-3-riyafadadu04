@@ -9,3 +9,19 @@
 // Output: false
 
 
+function propertyCheck(obj1, obj2) {
+    for (let key in obj2) {
+      if (obj1[key] !== obj2[key]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  const obj1 = { name: "John", age: 23, degree: "CS" };
+  const obj2 = { age: 23, degree: "CS" };
+  const obj3 = { name: "John", degree: "CS" };
+  const obj4 = { name: "Max", age: 23, degree: "CS" };
+
+  console.log(propertyCheck(obj1, obj2)); 
+  console.log(propertyCheck(obj3, obj4)); 
