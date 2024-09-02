@@ -23,7 +23,7 @@
 //     { employee_id: 3, employee_name: 'Chaitanya' }
 // ] 
 
-function countOccurrences(array, property, oldVal , newVal) {
+function replacePropety(array, property, oldVal , newVal) {
     array.forEach((obj) => {
       if(obj[property] === oldVal){
         obj[property] = newVal;
@@ -47,5 +47,5 @@ function countOccurrences(array, property, oldVal , newVal) {
     },
   ];
 
-  console.log(countOccurrences(arr, "employee_name"  , "Bhargava" , "Rahul"));
-  // console.log(countOccurrences(arr, "employee_id"  , 1 , 5));
+  console.log(replacePropety(arr, "employee_name"  , "Bhargava" , "Rahul"));
+  // console.log(replacePropety(arr, "employee_id"  , 1 , 5));
